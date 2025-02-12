@@ -19,15 +19,21 @@ This repository contains scripts to facilitate the migration of projects from Gi
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/scripts_migrate_glab_github.git
-    cd scripts_migrate_glab_github
+    cd merge
     ```
 
 ## Usage
 
 1. Configure your environment variables:
-    ```sh
-    export GITLAB_TOKEN=your_gitlab_token 
+    create a GITLAB_TOKEN
+    
+2. Review and update the configuration section in `call.ps1`:
+
+    ```
+    $gitServer = "https://snow.gitlab-dedicated.com/snowflakecorp"
+    $gitLabAccountUsername = "svc_gitlab_snowflake_usernamespaces"
+    $gitLabAccountEmail = "svc_gitlab_snowflake_username@snowflake.com"
+    $gitLabPat = "glpat-******************"
     ```
 
 2. Run the migration script:
@@ -38,10 +44,6 @@ This repository contains scripts to facilitate the migration of projects from Gi
 ## Configuration
 
 You can customize the migration process by modifying the `call.ps1` file. This file allows you to specify various options such as repository names, issue labels, and more flagspwsh -c ./_merge_call.ps1
-
-## Contributing
-
-Contributions are welcome! Please read the CONTRIBUTING.md file for guidelines on how to contribute to this project.
 
 ## License
 
