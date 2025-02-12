@@ -33,6 +33,7 @@ param (
     [string]$gitLabAccountUsername,
     [string]$gitLabAccountEmail,
     [string]$gitLabPat,
+    [string]$gitLabGroup,
     [string]$SrcRepoPath,
     [string]$TargetRepoPath,
     [string]$TempBranchExists
@@ -124,6 +125,11 @@ Show $TargetDirectoryPath
 Show ("Cloning source repository to {0}" -f $SrcRepoPath)
 InvokeGitCommand -GitArguments "clone $SrcRepoUrl $SrcRepoPath"
 
+if (Test-Path -Path $TargetRepoPath) {
+    Show ("Removing existing directory: {0}" -f $TargetRepoPath)
+    Remove-Item -Recurse -Force -Path $TargetRepoPath
+}
+
 Show ("Cloning target repository to {0}" -f $TargetRepoPath)
 InvokeGitCommand -GitArguments "clone $TargetRepoUrl $TargetRepoPath"
 
@@ -131,7 +137,6 @@ Push-Location $TargetRepoPath
 InvokeGitCommand -GitArguments "status"
 Show "Setting $SrcRepoPath as current directory..."
 Push-Location $SrcRepoPath
-Write-host (gci *)
 InvokeGitCommand -GitArguments "filter-branch --subdirectory-filter `"$SrcDirectory`" -- --all"
 Show "Cleaning unwanted data from source repository..."
 InvokeGitCommand -GitArguments "reset --hard"
@@ -141,7 +146,8 @@ InvokeGitCommand -GitArguments "clean -fd"
 Show "Creating the new directory structure..."
 New-Item -ItemType Directory -Path $TargetDirectoryPath -Force
 Show "Moving all files to the new directory structure..."
-# This command is summoned using the & directive. The gci * causes issues when running it from the InvokeGitCommand
+$GitArguments = "mv -v -f -k (gci *) `"$TargetDirectoryPath`""
+Show $GitArguments
 & git mv -v -f -k (gci *) "$TargetDirectoryPath"
 if (!$?) {
     Show "Git command failure: $GitArguments"
