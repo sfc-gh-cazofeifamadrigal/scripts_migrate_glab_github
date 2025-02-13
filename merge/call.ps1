@@ -53,15 +53,18 @@ $SrcBaseBranch = "master"
 $TargetBaseBranch = "master"
 
 #*****************************************************Source
-$IsMerged = $true
+$IsMerged = $false
 $SrcRepoURL = $gitServer + "/SE/sit/SIT.SMA.Scanner.GenericScanner.git"
 if (-not $IsMerged) {
     
     $SrcDirectory = "GenericScannerAssessmentCore"
     $TargetDirectory = "GenericScanner/Assemblies"
 
+    #Clean up the local directories and create new ones for the source and target repositories
     Test-DirectoriesExist -SrcRepoPath $SrcRepoPath -TargetRepoPath $TargetRepoPath
+    #Flag if the temporary branch exists at the target repository and if not, create it. On the remote server.
     $TempBranchExists = Test-TempBranchExists
+    #Execute the merge
     ./merge_directories.ps1 -SrcRepoURL $SrcRepoURL -SrcDirectory $SrcDirectory -SrcRepoPath $SrcRepoPath -TargetRepoURL $TargetRepoURL -TargetDirectory $TargetDirectory -TargetRepoPath $TargetRepoPath -TempBranch $TempBranch -SrcBaseBranch $SrcBaseBranch -TargetBaseBranch $TargetBaseBranch -gitLabAccountUsername $gitLabAccountUsername -gitLabAccountEmail $gitLabAccountEmail -gitLabPat $gitLabPat -gitLabGroup $gitLabGroup -TempBranchExists $TempBranchExists
 }
 
