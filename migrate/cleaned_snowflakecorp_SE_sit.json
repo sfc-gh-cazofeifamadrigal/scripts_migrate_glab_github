@@ -1,0 +1,30 @@
+[
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SMA.SnowflakeTools.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SMA.SnowflakeTools"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SIT.SMA.Engine.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SIT.SMA.Engine"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SMA.WebAPI.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SMA.WebAPI"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SMA.EF.Parsers.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SMA.EF.Parsers"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SIT.SMA.Generic.Controller.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SIT.SMA.Generic.Controller"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/EF.Utilities.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/EF.Utilities"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/SE/sit/SIT.SMA.Desktop.git",
+    "path_with_namespace": "snowflakecorp/SE/sit/SIT.SMA.Desktop"
+  }
+]

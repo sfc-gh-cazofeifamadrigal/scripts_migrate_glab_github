@@ -1,0 +1,50 @@
+[
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/SC.SnowConvertDesktop.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/SC.SnowConvertDesktop"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/SC.SnowConvert.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/SC.SnowConvert"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.SQL.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.SQL"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/SC.Generic.Controller.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/SC.Generic.Controller"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/SC.Generic.WebAPI.Licensing.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/SC.Generic.WebAPI.Licensing"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/SC.SnowHelpers.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/SC.SnowHelpers"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.Common.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.Common"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.Amg.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.Amg"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.CommonContent.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.CommonContent"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.VsCoco.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.VsCoco"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.Matchine.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.Matchine"
+  },
+  {
+    "http_url_to_repo": "https://snow.gitlab-dedicated.com/snowflakecorp/ps/mountain/EF.CSharp.git",
+    "path_with_namespace": "snowflakecorp/ps/mountain/EF.CSharp"
+  }
+]
