@@ -1,0 +1,56 @@
+[
+  {
+    "createdAt": "2025-02-28T21:06:40Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert",
+    "updatedAt": "2025-03-03T20:52:58Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:11:33Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert-parsers",
+    "updatedAt": "2025-03-03T20:13:20Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert-parsers",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:17:14Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert-py-helpers",
+    "updatedAt": "2025-02-28T21:22:55Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert-py-helpers",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:16:47Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert-webapi",
+    "updatedAt": "2025-02-28T21:25:27Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert-webapi",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:15:36Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert-genericinfrastructure",
+    "updatedAt": "2025-02-28T21:24:40Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert-genericinfrastructure",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T20:57:34Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-snowconvert-desktop",
+    "updatedAt": "2025-03-03T14:22:28Z",
+    "url": "https://github.com/snowflakedb/migrations-snowconvert-desktop",
+    "visibility": "PRIVATE"
+  }
+]

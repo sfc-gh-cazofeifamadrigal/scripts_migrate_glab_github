@@ -1,0 +1,65 @@
+[
+  {
+    "createdAt": "2025-02-28T21:20:58Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-csharp",
+    "updatedAt": "2025-02-28T21:21:31Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-csharp",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:20:20Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-matchine",
+    "updatedAt": "2025-02-28T21:20:31Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-matchine",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:20:05Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-vscoco",
+    "updatedAt": "2025-02-28T21:20:14Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-vscoco",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:19:39Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-commoncontent",
+    "updatedAt": "2025-02-28T21:19:57Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-commoncontent",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:17:58Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-amg",
+    "updatedAt": "2025-02-28T21:19:22Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-amg",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T21:17:32Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-common",
+    "updatedAt": "2025-02-28T21:18:08Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-common",
+    "visibility": "PRIVATE"
+  },
+  {
+    "createdAt": "2025-02-28T19:24:11Z",
+    "description": "",
+    "isPrivate": true,
+    "name": "migrations-ef-utilities",
+    "updatedAt": "2025-02-28T19:25:15Z",
+    "url": "https://github.com/snowflakedb/migrations-ef-utilities",
+    "visibility": "PRIVATE"
+  }
+]

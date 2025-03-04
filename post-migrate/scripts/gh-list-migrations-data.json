@@ -1,0 +1,11 @@
+[
+  {
+    "createdAt": "2025-02-18T19:12:48Z",
+    "description": "Data historical migrator that migrates data from a source (SQL-Server, Redshift) to Snowflake",
+    "isPrivate": true,
+    "name": "migrations-data-migrator-core",
+    "updatedAt": "2025-03-04T14:27:09Z",
+    "url": "https://github.com/snowflakedb/migrations-data-migrator-core",
+    "visibility": "PRIVATE"
+  }
+]
