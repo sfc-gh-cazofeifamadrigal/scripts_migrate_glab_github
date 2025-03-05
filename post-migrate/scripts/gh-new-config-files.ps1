@@ -17,13 +17,10 @@ function Read-RepositoryData {
         $foundFiles = Get-ChildItem -Path . -Filter (Split-Path $JsonFilePath -Leaf) -Recurse -File -ErrorAction Stop
         
         if ($foundFiles.Count -eq 0) {
-            # Try alternate names following the pattern in the workspace
             $alternateNames = @(
                 "gh-list-migrations-ef.json",
                 "gh-list-migrations-sc.json", 
-                "gh-list-migrations-sma.json",
-                "cleaned_snowflakecorp_PS_mountain.json",
-                "cleaned_snowflakecorp_SE_sit.json"
+                "gh-list-migrations-sma.json"
             )
             
             foreach ($name in $alternateNames) {
@@ -79,15 +76,14 @@ function Copy-Repository {
         [string]$RepositoryName
     )
     
-    # Check if the repository URL actually exists
     if ([string]::IsNullOrEmpty($RepositoryUrl)) {
         Write-Error "Repository URL is empty for $RepositoryName"
         return $false
     }
     
-    Write-Output "Cloning $RepositoryUrl..." 
+    Write-Output "Cloning $RepositoryUrl..."
+        
     try {
-        # Use git directly for more reliable cloning
         $process = Start-Process -FilePath "git" -ArgumentList "clone", $RepositoryUrl -NoNewWindow -PassThru -Wait
         if ($process.ExitCode -ne 0) {
             Write-Error "Git clone failed with exit code $($process.ExitCode)"
@@ -101,7 +97,29 @@ function Copy-Repository {
     }
 }
 
-function Convert-GitlabDirectory {
+function ReplacePreCommitHook {
+    param (
+        [string]$RepositoryName
+    )
+
+    Get-Location 
+    Write-Output "Checking for pre-commit hook in $RepositoryName..."
+    $preCommitConfig = "../config/.pre-commit-config.yaml"
+    $preCommitConfigPath = Join-Path $PSScriptRoot -ChildPath $preCommitConfig
+    write-host "preCommitConfigPath: $preCommitConfigPath"
+    
+    if (-not (Test-Path -Path $preCommitConfigPath)) {
+        Write-Error "Source pre-commit config file not found at: $preCommitConfigPath"
+        return $false
+    }else {
+        Write-Output "Found .pre-commit-config.yaml in repository, replacing it..."
+        Copy-Item -Path $preCommitConfigPath -Destination "./.pre-commit-config.yaml" -Force
+        Write-Output "Pre-commit hook config replaced successfully."
+        return $true
+    }
+}
+
+function ReplaceFilesGitlabDirectory {
     param (
         [string]$RepositoryName
     )
@@ -236,13 +254,17 @@ function Copy-Repositories {
         
         if ($cloneSuccess) {
             Push-Location $repoName
-            Convert-GitlabDirectory -RepositoryName $repoName
+            gh auth status
+            gh secret set PR_LIMIT_FILES --body "20" --repo snowflakedb/$repoName
+            
+            ReplaceFilesGitlabDirectory -RepositoryName $repoName
+            ReplacePreCommitHook -RepositoryName $repoName
             
             git status
-            Write-Output "Committing changes to repository $repoName..."
-            git add .
+            git checkout -b support/github-migration
+            git add . --verbose
             git commit -m "Add GitHub configuration files"
-            git push
+            git push --set-upstream origin support/github-migration
             
             Pop-Location
         }
@@ -258,28 +280,10 @@ function Copy-Repositories {
 
 function MainData {
     Write-Output "Starting migration script..." 
-    
-    try {
-        $ghVersion = gh --version
-        Write-Output "GitHub CLI version: $ghVersion"
-    }
-    catch {
-        Write-Error "GitHub CLI (gh) not found or not in PATH. Please install GitHub CLI and authenticate."
-        exit 1
-    }
-    
-    try {
-        $authStatus = gh auth status
-        Write-Output "GitHub authentication status: $authStatus"
-    }
-    catch {
-        Write-Error "GitHub authentication failed. Please run 'gh auth login' first."
-        exit 1
-    }
-    
-
-    $jsonFilePath = "gh-list-migrations-data.json"
-    
+    #$jsonFilePath = "gh-list-migrations-data.json"
+    #$jsonFilePath = "gh-list-migrations-ef.json"
+    #$jsonFilePath = "gh-list-migrations-sma.json"
+    $jsonFilePath = "gh-list-migrations-snowconvert.json"
     $repos = Read-RepositoryData -JsonFilePath $jsonFilePath
     
     Write-Output "Repositories read from JSON file!" 

@@ -1,0 +1,11 @@
+repos:
+- repo: git@github.com:snowflakedb/casec_precommit.git
+  rev: v1.19
+  hooks:
+  - id: secret-scanner
+
+- repo: git@github.com:GitGuardian/ggshield.git
+  rev: v1.32.2
+  hooks:
+  - id: ggshield
+    stages: [commit]

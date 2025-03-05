@@ -1,11 +1,8 @@
 name: PR Lint
 
 on:
-  pull_request_target:
-    types: [edited, opened, reopened, synchronize]
   pull_request:
-    types: [ready_for_review]
-    branches: [main]
+    types: [opened, synchronize, reopened, edited, ready_for_review]
 
 permissions:
   contents: read
